@@ -1,0 +1,6 @@
+{
+  "name": "ListItems",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ListItems.js"
+}

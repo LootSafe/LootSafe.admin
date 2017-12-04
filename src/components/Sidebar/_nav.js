@@ -3,76 +3,83 @@ export default {
     {
       name: 'Meta',
       url: '/dashboard',
-      icon: 'icon-speedometer'
+      icon: 'icon-disc'
     },
     {
       name: 'Item',
       url: '/item',
-      icon: 'icon-speedometer',
+      icon: 'icon-menu',
       children: [
         {
           name: 'New Item',
           url: '/item/new',
-          icon: 'icon-speedometer'
+          icon: 'icon-disc'
         },
         {
           name: 'List Items',
           url: '/item/list',
-          icon: 'icon-speedometer'
+          icon: 'icon-disc'
         },
         {
-          name: 'Get Item',
-          url: '/item/get',
-          icon: 'icon-speedometer'
-        },
-        {
-          name: 'Spawn Item',
+          name: 'Distribute Item',
           url: '/item/spawn',
-          icon: 'icon-speedometer'
-        },
-        {
-          name: 'Delist Item',
-          url: '/item/new',
-          icon: 'icon-speedometer'
+          icon: 'icon-disc'
         }
       ]
     },
     {
       name: 'Lootbox',
       url: '/lootbox',
-      icon: 'icon-speedometer',
+      icon: 'icon-menu',
       children: [
+        {
+          name: 'Add to Loot-table',
+          url: '/lootbox/new',
+          icon: 'icon-disc'
+        },
         {
           name: 'Chances',
           url: '/lootbox/chances',
-          icon: 'icon-speedometer'
+          icon: 'icon-disc'
         },
         {
           name: 'Get Items',
           url: '/lootbox/items',
-          icon: 'icon-speedometer'
+          icon: 'icon-disc'
         },
         {
           name: 'Cost',
           url: '/lootbox/cost',
-          icon: 'icon-speedometer'
-        },
-        {
-          name: 'New Item',
-          url: '/lootbox/new',
-          icon: 'icon-speedometer'
+          icon: 'icon-disc'
         }
       ]
     },
     {
       name: 'Crafter',
       url: '/crafter',
-      icon: 'icon-speedometer'
+      icon: 'icon-menu',
+      children: [
+        {
+          name: 'List Craftables',
+          url: '/crafting/list',
+          icon: 'icon-disc'
+        },
+        {
+          name: 'Crafting Recipie',
+          url: '/crafting/recipie/create',
+          icon: 'icon-disc'
+        },
+        {
+          name: 'Deconstructing Recipie',
+          url: '/crafting/deconstruction/create',
+          icon: 'icon-disc'
+        }
+      ]
     },
     {
       name: 'Trade',
       url: '/trade',
-      icon: 'icon-speedometer'
+      icon: 'icon-menu'
     }
   ]
 };

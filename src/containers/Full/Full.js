@@ -8,6 +8,12 @@ import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
+import NewItem from '../../views/NewItem/';
+import ListItems from '../../views/ListItems/';
+import DistributeItem from '../../views/DistributeItem/';
+import UpdateLootboxChances from '../../views/UpdateLootboxChances/';
+import AddToLootTable from '../../views/AddToLootTable/';
+import UpdateBoxCost from '../../views/UpdateBoxCost/';
 
 class Full extends Component {
   render() {
@@ -21,6 +27,12 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/item/new" name="New Item" component={NewItem}/>
+                <Route path="/item/list" name="List Items" component={ListItems}/>
+                <Route path="/item/spawn" name="Distribute Item" component={DistributeItem}/>
+                <Route path="/lootbox/chances" name="Update Lootbox Chances" component={UpdateLootboxChances}/>
+                <Route path="/lootbox/new" name="Add Lootbox Item" component={AddToLootTable}/>
+                <Route path="/lootbox/cost" name="Update Lootbox Cost" component={UpdateBoxCost}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

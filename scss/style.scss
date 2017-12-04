@@ -20,3 +20,12 @@
 
 // Custom styles
 @import "custom";
+
+
+.main {
+  background: #fff !important;
+}
+
+.app-header.navbar .navbar-brand {
+  background-size: 150px auto;
+}
