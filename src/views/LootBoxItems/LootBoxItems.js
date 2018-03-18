@@ -4,7 +4,7 @@ import {Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Table, Pro
 import Web3 from 'web3'
 const web3 = new Web3()
 
-class ListItems extends Component {
+class LootBoxItems extends Component {
 
   constructor(props) {
     super(props)
@@ -167,4 +167,4 @@ class ListItems extends Component {
   }
 }
 
-export default ListItems;
+export default LootBoxItems;

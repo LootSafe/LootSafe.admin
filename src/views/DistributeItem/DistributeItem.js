@@ -35,8 +35,8 @@ class DistributeItem extends Component {
       .then(json => {
         if (json.status === 200) {
           this.setState({
-            items: json.data.items,
-            selectedItem: web3.utils.toUtf8(json.data.items[0])
+            items: json.data,
+            selectedItem: web3.utils.toUtf8(json.data[0])
           })
         } else {
           this.setState({
@@ -46,33 +46,40 @@ class DistributeItem extends Component {
       })
   }
 
+  
+
   distributeItem() {
-    fetch(`${apiAddr}/item/spawn`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-        'key': apiKey,
-        'otp': this.state.yubikey
-      },
-      body: JSON.stringify({
-        name: this.state.selectedItem,
-        to: this.state.recipient
-      })
-    })
+    fetch(`${apiAddr}/item/ledger`)
       .then(res => res.json())
       .then(json => {
-        if (json.status === 200) {
-          this.setState({
-            txid: json.data.tx,
-            tx: JSON.stringify(json.data.receipt),
-            modal: true
+        const item = json.data.filter(i => i._parsed.name === this.state.selectedItem )[0]
+        fetch(`${apiAddr}/item/spawn`, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
+            'key': apiKey,
+            'otp': this.state.yubikey
+          },
+          body: JSON.stringify({
+            itemAddress: item.address,
+            to: this.state.recipient
           })
-        } else {
-          this.setState({
-            error: json.message || 'Unknown error!'
+        })
+          .then(res => res.json())
+          .then(json2 => {
+            if (json2.status === 200) {
+              this.setState({
+                txid: json2.data.tx,
+                tx: JSON.stringify(json2.data.receipt),
+                modal: true
+              })
+            } else {
+              this.setState({
+                error: json2.message || 'Unknown error!'
+              })
+            }
           })
-        }
       })
   }
 

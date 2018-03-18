@@ -75,11 +75,6 @@ export default {
           icon: 'icon-disc'
         }
       ]
-    },
-    {
-      name: 'Trade',
-      url: '/trade',
-      icon: 'icon-menu'
     }
   ]
 };

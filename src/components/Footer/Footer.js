@@ -30,7 +30,7 @@ class Footer extends Component {
     }
 
     getStatus()
-    setInterval(getStatus, 3000)
+    setInterval(getStatus, 13000)
   }
 
   render() {

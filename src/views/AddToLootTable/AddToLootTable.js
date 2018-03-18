@@ -35,8 +35,8 @@ class AddToLootTable extends Component {
       .then(json => {
         if (json.status === 200) {
           this.setState({
-            items: json.data.items,
-            selectedItem: web3.utils.toUtf8(json.data.items[0]),
+            items: json.data,
+            selectedItem: web3.utils.toUtf8(json.data[0]),
             selectedRarity: 'common'
           })
         } else {
